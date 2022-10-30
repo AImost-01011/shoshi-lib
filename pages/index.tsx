@@ -12,9 +12,9 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (error) {
-      router.push("/error");
-    }
+    // if (error) {
+    //   router.push("/error");
+    // }
 
     if (user) {
       axios.get(`/api/user/get/email/${user.email}`).then((data) => {
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         }
       });
     }
-  }, [error, router, user]);
+  }, [router, user]);
 
   if (isLoading) return <div>loading</div>;
 
