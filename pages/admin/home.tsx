@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import axios, { AxiosResponse } from "axios";
 import { format } from "date-fns";
-import { useSelector, useDispatch } from "react-redux";
-import { useUser } from "@auth0/nextjs-auth0";
 
 import st from "../../styles/admin/home.module.scss";
 import { BookType } from "../../redux/globalType";
@@ -18,6 +16,7 @@ const Home = () => {
       .then((doc: AxiosResponse<BookType[]>) => {
         const sortedBooks = doc.data.sort((a, b) => {
           const aDate = new Date(a.lent.dueDate);
+
           const bDate = new Date(b.lent.dueDate);
           if (aDate < bDate) return -1;
           if (aDate > bDate) return 1;
