@@ -1,0 +1,132 @@
+@import "../../../styles/define.module.scss";
+
+.search {
+  border-radius: 4px;
+  border: 2px solid $mc3;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 2px 2px 16px -4px $mc5;
+
+  .titleContainer {
+    color: $mc7;
+    font-weight: bold;
+    font-size: $fs6;
+    margin: 4px;
+    color: $mc7;
+  }
+
+  .bodyContainer {
+    height: 0;
+    overflow: hidden;
+    transition: 0.4s;
+    transition-timing-function: $cubic;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .cateContainer {
+      display: flex;
+      flex-direction: column;
+      margin: 4px;
+
+      .cateTitleContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .title {
+          margin: 0 4px;
+          font-size: $fs5;
+          color: $mc6;
+        }
+
+        .divider {
+          flex: 1;
+          height: 2px;
+          background-color: $mc6;
+        }
+      }
+
+      .cateItemList {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .cateItemContainer {
+          margin: 4px;
+
+          .cateCheck {
+            display: none;
+          }
+
+          .cateCheck:checked + .cateItem {
+            color: $mc4;
+            border-color: $mc4;
+            border-radius: 8px;
+
+            transition: 0.4s;
+          }
+
+          .cateItem {
+            border: 1px solid $dc2;
+            padding: 0 8px;
+            color: $dc1;
+
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+
+    .checkBtnContainer {
+      display: flex;
+      flex-direction: row;
+      margin-top: 4px;
+
+      .checkBtn {
+        background-color: $mc4;
+        color: $mc7;
+      }
+
+      .checkOutBtn {
+        background-color: $mc6;
+        color: $mc1;
+      }
+
+      button {
+        flex: 1;
+        border: none;
+        font-size: $fs4;
+      }
+    }
+  }
+
+  .btnContainer {
+    button {
+      background-color: $mc2;
+      width: 100%;
+      color: $mc7;
+      border: none;
+      font-size: $fs4;
+      padding: 4px 8px;
+
+      &::after {
+        content: "▼";
+      }
+    }
+  }
+  .btnContainerOpen {
+    button {
+      &::after {
+        content: "▲";
+      }
+    }
+  }
+
+  .bodyContainerOpen {
+    height: 400px;
+    transition: 0.6s;
+    transition-timing-function: $cubic;
+  }
+}

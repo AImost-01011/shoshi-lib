@@ -1,0 +1,60 @@
+@import "../../../styles/define.module.scss";
+
+.requestTile {
+  margin: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $mc2;
+  box-shadow: 2px 2px 16px -4px $mc5;
+
+  .title {
+    margin: 4px 8px;
+    font-size: $fs5;
+    font-weight: bold;
+  }
+
+  .reqList {
+    width: 100%;
+    .listItem {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 4px 0;
+
+      .itemPicture {
+        width: 60px;
+        height: 80px;
+        background-color: $mc3;
+        margin: 0 8px;
+        border-radius: 4px;
+      }
+
+      .itemTitle {
+        flex: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        font-weight: bold;
+      }
+    }
+
+    .noItem {
+      margin: 12px;
+      text-align: center;
+      font-size: $fs4;
+    }
+
+    .listBtn {
+      width: 100%;
+      background-color: $mc3;
+      padding: 4px 0;
+      border: none;
+      font-size: $fs4;
+    }
+  }
+}

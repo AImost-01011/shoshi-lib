@@ -1,0 +1,55 @@
+@import "../define.module.scss";
+
+.lineId {
+  margin: 8px;
+
+  .titleContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid $mc4;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 4px 0;
+
+    .title {
+      color: $mc4;
+      font-size: $fs6;
+      font-weight: bold;
+    }
+  }
+
+  .logo {
+    width: 100%;
+    height: 400px;
+    background-color: $mc3;
+    margin: 4px 0;
+  }
+
+  .talkContainer {
+    background-color: $mc1;
+    padding: 8px;
+    margin: 8px;
+  }
+
+  .btnContainer {
+    margin: 8px 0;
+
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $mc3;
+      border: none;
+      padding: 8px;
+      font-size: $fs4;
+      width: 200px;
+      margin: auto;
+      color: $mc7;
+      border-radius: 4px;
+    }
+  }
+}

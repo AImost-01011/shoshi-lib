@@ -1,0 +1,82 @@
+@import "../../../styles/define.module.scss";
+
+.returnTile {
+  margin: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $mc2;
+  box-shadow: 2px 2px 16px -4px $mc5;
+
+  .title {
+    margin: 4px 8px;
+    font-size: $fs5;
+    font-weight: bold;
+  }
+
+  .innerList {
+    width: 100%;
+
+    .listItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 2rem;
+      padding: 0 8px;
+
+      .listTitleContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+        .itemPoint {
+          width: 10px;
+          height: 10px;
+          background-color: black;
+          border-radius: 100%;
+          margin: 0 8px;
+        }
+
+        .itemTitle {
+          font-weight: bold;
+          font-size: $fs4;
+          margin: 0 4px;
+
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+
+      .listContentContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 4px 0;
+        width: 100%;
+
+        .itemDay {
+          font-size: $fs4;
+        }
+      }
+    }
+
+    .noItem {
+      margin: 12px;
+      text-align: center;
+    }
+
+    .listBtn {
+      width: 100%;
+      background-color: $mc3;
+      padding: 4px 0;
+      border: none;
+      font-size: $fs4;
+    }
+  }
+}

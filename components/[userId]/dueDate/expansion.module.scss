@@ -1,0 +1,46 @@
+@import "../../../styles/define.module.scss";
+
+.expansion {
+  width: 100%;
+  background-color: $mc4;
+  border: none;
+  font-size: $fs4;
+  padding: 4px 8px;
+}
+
+.noExpansion {
+  width: 100%;
+  background-color: $dc2;
+  color: white;
+  border: none;
+  font-size: $fs4;
+  padding: 4px 8px;
+}
+
+.still {
+  width: 100%;
+  border: none;
+  font-size: $fs4;
+  padding: 4px 8px;
+  background-color: $dc2;
+  color: white;
+}
+
+.expired {
+  width: 100%;
+  border: none;
+  font-size: $fs4;
+  padding: 4px 8px;
+  background-color: $ec4;
+  color: white;
+}
+
+.loading {
+  width: 100%;
+  border: none;
+  font-size: $fs4;
+  padding: 4px 8px;
+  background-color: $nc4;
+  color: $nc7;
+  transition: 0.4s;
+}

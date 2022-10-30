@@ -1,0 +1,165 @@
+@import "../../styles/define.module.scss";
+
+.mainNav {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+  background-color: $mc1;
+  overflow: hidden;
+
+  border-radius: 16px 16px 0 0;
+
+  .titleTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    background-color: $mc3;
+
+    .upIcon {
+      width: 20px;
+      height: 20px;
+      margin: 4px 0;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+
+      .title {
+        font-size: $fs7;
+      }
+
+      .bagContainer {
+        margin-left: 30px;
+        display: flex;
+        flex-direction: row;
+
+        .bagIcon {
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+        }
+
+        .notiIcon {
+          position: relative;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background-color: $ec3;
+
+          @keyframes notiAnime {
+            from {
+              height: 8px;
+              width: 8px;
+              opacity: 1;
+            }
+            to {
+              height: 32px;
+              width: 32px;
+              opacity: 0;
+            }
+          }
+
+          .notiInner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            background-color: $ec2;
+
+            animation: notiAnime 1s linear 0s infinite;
+          }
+        }
+      }
+    }
+  }
+
+  .navBody {
+    padding: 8px 16px;
+
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      margin: 8px 0;
+
+      .listTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .title {
+          font-size: $fs5;
+          margin: 0 4px;
+        }
+
+        .titleLine {
+          height: 2px;
+          flex: 1;
+          background-color: black;
+        }
+      }
+
+      .rentalContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 4px 0;
+
+        button {
+          width: 40%;
+          font-size: $fs4;
+          background-color: white;
+          border: 2px solid $mc3;
+          border-radius: 4px;
+        }
+      }
+
+      .myPageContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 4px 0;
+
+        button {
+          width: 40%;
+          font-size: $fs4;
+          background-color: white;
+          border: 2px solid $mc3;
+          border-radius: 4px;
+          margin-bottom: 8px;
+        }
+      }
+
+      .backBtn {
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        font-size: $fs5;
+        border: none;
+        color: white;
+        font-weight: bold;
+        background-color: $mc4;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.mainNavOpen {
+  background-color: $mc1;
+  .titleTop {
+    .upIcon {
+      transform: rotate(60deg);
+      transition: 0.4s;
+    }
+  }
+}

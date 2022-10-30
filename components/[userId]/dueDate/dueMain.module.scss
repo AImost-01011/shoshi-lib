@@ -1,0 +1,77 @@
+@import "../../../styles/define.module.scss";
+
+.dueMain {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: $mc1;
+  min-height: 100vh;
+
+  .caution {
+    margin: 8px 0;
+    color: $ec4;
+    margin: 16px 0;
+    font-weight: bold;
+  }
+
+  .bookContainer {
+    .bookCard {
+      margin: 8px 0;
+      background-color: $mc2;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 2px 2px 12px -4px $mc6;
+
+      .bookInfo {
+        margin: 4px;
+        display: grid;
+        grid-template:
+          "pic .. title" 60px
+          "pic .. due" 28px
+          /64px 8px 1fr;
+
+        .bookPicture {
+          grid-area: pic;
+          background-color: $mc4;
+          border-radius: 4px;
+        }
+
+        .bookTitle {
+          grid-area: title;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          span {
+            font-weight: bold;
+            color: $mc7;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+        }
+
+        .bookDue {
+          grid-area: due;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .expansionContainer {
+        width: 100%;
+      }
+    }
+
+    .noItem {
+      text-align: center;
+      margin: 16px;
+    }
+  }
+}

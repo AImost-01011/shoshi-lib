@@ -1,0 +1,76 @@
+@import "../define.module.scss";
+
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+
+  .titleContainer {
+    padding: 8px;
+
+    .title {
+      font-size: $fs4;
+      font-weight: bold;
+    }
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 8px 0;
+
+    button {
+      background-color: white;
+      border: 2px solid $mc3;
+      border-radius: 4px;
+      font-size: $fs3;
+      color: $mc3;
+      margin: 4px 8px;
+    }
+  }
+
+  .lendingBoard {
+    .titleContainer {
+      .title {
+        font-size: $fs4;
+        font-weight: bold;
+      }
+    }
+
+    .lendingList {
+      display: flex;
+      flex-direction: column;
+
+      .listItem {
+        background-color: white;
+        border-radius: 4px;
+        border: 2px solid $mc3;
+        margin: 4px 0;
+
+        display: grid;
+        grid-template:
+          ".. user  ..... date  .." 30px
+          ".. title title title .." 30px
+          /8px 120px 1fr 120px 8px;
+
+        .listTitle {
+          grid-area: user;
+        }
+
+        .listDate {
+          grid-area: date;
+          text-align: end;
+        }
+
+        .listBook {
+          grid-area: title;
+        }
+      }
+
+      .listError {
+        border-color: $ec3;
+      }
+    }
+  }
+}

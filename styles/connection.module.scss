@@ -1,0 +1,62 @@
+@import "./define.module.scss";
+
+.connectionTop {
+  width: 100%;
+
+  .connection {
+    display: flex;
+    flex-direction: column;
+
+    .cordCard {
+      width: 90%;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $ec3;
+      margin: 16px 0;
+      border-radius: 4px;
+      color: white;
+      margin: 16px auto;
+
+      .text {
+        font-size: $fs4;
+      }
+
+      .cord {
+        font-size: $fs5;
+        font-weight: bold;
+      }
+    }
+
+    .descContainer {
+      margin: 8px 4px;
+
+      .descTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+        .title {
+          font-size: $fs4;
+          font-weight: bold;
+          color: $ec3;
+          margin: 0 4px;
+        }
+
+        .titleLine {
+          height: 2px;
+          background-color: $ec3;
+          flex: 1;
+        }
+      }
+    }
+
+    .bottomSpace {
+      height: 100px;
+      width: 100%;
+    }
+  }
+}

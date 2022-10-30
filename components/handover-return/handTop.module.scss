@@ -1,0 +1,24 @@
+@import "../../styles/define.module.scss";
+
+.handTop {
+  padding: 8px;
+  background-color: $mc1;
+  min-height: 100vh;
+
+  .selectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 200px;
+    margin: 0 8px;
+
+    button {
+      border: none;
+      background-color: $mc2;
+      padding: 4px;
+      font-size: $fs4;
+      border-radius: 8px;
+      box-shadow: 2px 2px 16px -4px $mc5;
+    }
+  }
+}

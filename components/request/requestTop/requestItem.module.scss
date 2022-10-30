@@ -1,0 +1,103 @@
+@import "../../../styles/define.module.scss";
+
+.requestItem {
+  background-color: $mc2;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+  box-shadow: $shadow;
+
+  .bookInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 4px 0;
+
+    .bookPicture {
+      width: 60px;
+      height: 80px;
+      background-color: $mc4;
+      margin: 0 8px;
+      border-radius: 4px;
+    }
+
+    .bookTitle {
+      flex: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      font-size: $fs4;
+      font-weight: bold;
+    }
+  }
+
+  .requestController {
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+
+    transition: 0.2s;
+
+    button {
+      width: 100%;
+      font-size: $fs4;
+      background-color: $ec4;
+      border: none;
+      color: white;
+    }
+  }
+
+  .requestControllerOpen {
+    height: 26px;
+
+    transition: 0.4s;
+    transition-delay: 0.2s;
+  }
+
+  .deleteController {
+    display: flex;
+    flex-direction: column;
+    background-color: $ec1;
+    overflow: hidden;
+    height: 0;
+
+    transition: 0.2s;
+
+    .deleteMessage {
+      margin: 8px 0;
+      font-size: $fs4;
+      color: $ec4;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .confirmController {
+      display: flex;
+      flex-direction: row;
+
+      button {
+        font-size: $fs3;
+        flex: 1;
+        border: none;
+        font-size: $fs4;
+      }
+
+      .yes {
+        background-color: $ec4;
+        color: white;
+      }
+
+      .no {
+        background-color: $ec2;
+      }
+    }
+  }
+
+  .deleteControllerOpen {
+    height: 66px;
+
+    transition: 0.4s;
+    transition-delay: 0.2s;
+  }
+}

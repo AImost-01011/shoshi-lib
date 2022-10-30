@@ -1,0 +1,254 @@
+@import "../define.module.scss";
+
+.camera {
+  padding: 8px;
+  background-color: $mc1;
+  min-height: 100vh;
+
+  .one {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+    transition: 0.4s;
+    transition-timing-function: $cubic;
+
+    .title {
+      font-size: $fs6;
+      font-weight: bold;
+    }
+
+    .cameraContainer {
+      margin: 0 8px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .cameraDesc {
+      text-align: center;
+      margin: 4px 0;
+    }
+
+    .returnBtnContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px 0;
+
+      button {
+        font-size: $fs4;
+        border: none;
+        background-color: $mc2;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 16px -4px $mc5;
+      }
+    }
+  }
+
+  .oneOpen {
+    height: 500px;
+    transition: 0.8s;
+    transition-timing-function: $cubic;
+  }
+
+  .two {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+    transition: 0.4s;
+    transition-timing-function: $cubic;
+
+    .title {
+      font-size: $fs6;
+      font-weight: bold;
+    }
+
+    .resultContainer {
+      .resultCard {
+        margin: 8px;
+        border: none;
+        color: white;
+        border-radius: 4px;
+
+        .result {
+          display: grid;
+          grid-template:
+            "... ..... ..... ..... ..." 8px
+            "... img   ..... title ..." 80px
+            "... owner owner owner ..." 30px
+            "... ..... ..... ..... ..." 8px
+            /8px 60px 1fr 260px 8px;
+
+          .resultImg {
+            grid-area: img;
+            background-color: $mc1;
+            border-radius: 4px;
+          }
+
+          .resultTitle {
+            grid-area: title;
+            line-height: 80px;
+            text-align: center;
+            font-size: $fs5;
+            font-weight: bold;
+          }
+
+          .resultOwner {
+            grid-area: owner;
+            line-height: 30px;
+            text-align: center;
+            font-size: $fs4;
+          }
+        }
+      }
+      .bookCard {
+        background-color: $mc4;
+      }
+      .rejectCard {
+        background-color: $ec4;
+
+        .rejectMessage {
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .question {
+        text-align: center;
+        margin: 8px 0;
+      }
+
+      .rejectBtnContainer,
+      .btnContainer {
+        margin: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        button {
+          width: 40%;
+          font-size: $fs4;
+          font-weight: bold;
+          border-radius: 8px;
+          padding: 4px;
+          border: none;
+        }
+      }
+
+      .rejectBtnContainer {
+        .confirm {
+          background-color: $ec4;
+          color: white;
+          box-shadow: 2px 2px 16px -4px $ec5;
+        }
+
+        .reject {
+          background-color: $ec1;
+          color: $ec7;
+          box-shadow: 2px 2px 16px -4px $ec2;
+        }
+      }
+
+      .btnContainer {
+        .confirm {
+          background-color: $mc4;
+          color: white;
+          box-shadow: 2px 2px 16px -4px $mc5;
+        }
+
+        .reject {
+          background-color: $mc2;
+          color: $ec7;
+          box-shadow: 2px 2px 16px -4px $mc5;
+        }
+      }
+    }
+
+    // .rejectContainer {
+    //   .rejectCard {
+    //     margin: 4px 8px;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     border: none;
+    //     background-color: $ec3;
+    //     color: white;
+    //     border-radius: 4px;
+
+    //     .rejectTitle {
+    //       margin: 8px 0;
+    //     }
+    //   }
+    // }
+  }
+
+  .twoOpen {
+    height: 250px;
+
+    transition: 0.8s;
+    transition-timing-function: $cubic;
+  }
+
+  .three {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+
+    transition: 0.4s;
+    transition-timing-function: $cubic;
+
+    .title {
+      font-size: $fs6;
+      font-weight: bold;
+    }
+
+    .succeedContainer {
+      .succeedCard {
+        margin: 8px;
+        height: 80px;
+        background-color: $nc4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 4px;
+
+        .message {
+          font-weight: bold;
+          font-size: $fs5;
+        }
+      }
+    }
+
+    .btnContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        width: 200px;
+        font-size: $fs4;
+        font-weight: bold;
+        background-color: $nc4;
+        border: none;
+        border-radius: 8px;
+        padding: 4px;
+        color: $nc7;
+        box-shadow: 2px 2px 16px -4px $nc5;
+      }
+    }
+  }
+
+  .threeOpen {
+    height: 200px;
+
+    transition: 0.8s;
+    transition-timing-function: $cubic;
+  }
+}

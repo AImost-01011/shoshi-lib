@@ -1,0 +1,28 @@
+@import "../../../../styles/define.module.scss";
+
+.bookBtn {
+  width: 100%;
+  font-size: $fs4;
+  border: none;
+  border-radius: 4px;
+}
+
+.notAvailable {
+  background-color: $dc2;
+  color: white;
+}
+
+.requested {
+  background-color: $nc4;
+  color: $nc7;
+}
+
+.request {
+  background-color: $mc3;
+  color: $mc7;
+}
+
+.preserve {
+  background-color: $mc5;
+  color: white;
+}

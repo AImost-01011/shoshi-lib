@@ -1,0 +1,50 @@
+@import "define.module.scss";
+
+.loginTop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    width: 200px;
+    height: 200px;
+    background-color: $mc4;
+    margin: 20px 0;
+  }
+
+  .loading {
+    font-size: $fs4;
+  }
+}
+
+.logoutTop {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    width: 90%;
+    height: 300px;
+    background-color: $mc4;
+    margin: 2rem 0;
+  }
+
+  .title {
+    font-size: $fs7;
+    margin: 10px 0;
+  }
+
+  .loginBtn {
+    background-color: $mc4;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: $fs5;
+    color: white;
+    margin: 10px auto;
+  }
+}

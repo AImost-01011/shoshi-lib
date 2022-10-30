@@ -1,0 +1,115 @@
+@import "../../styles/define.module.scss";
+
+.newsTop {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: $mc1;
+  min-height: 100vh;
+
+  .newsContainer {
+    .newsCard {
+      background-color: $mc2;
+      margin: 8px 0;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 2px 2px 16px -4px $mc5;
+
+      .newsMain {
+        display: flex;
+        flex-direction: column;
+
+        .newsTitle {
+          margin: 8px 8px 0 8px;
+          font-size: $fs5;
+          font-weight: bold;
+          color: $mc7;
+        }
+
+        .newsTime {
+          text-align: end;
+          margin: 0 8px;
+          font-size: $fs3;
+        }
+
+        .newsContent {
+          margin: 8px;
+          font-size: $fs4;
+        }
+      }
+
+      .newsController {
+        display: flex;
+        flex-direction: row;
+        height: 0;
+        overflow: hidden;
+
+        transition: 0.2s;
+
+        button {
+          flex: 1;
+          font-size: $fs4;
+          border: none;
+          padding: 4px;
+          background-color: $ec4;
+          color: white;
+        }
+      }
+
+      .newsControllerOpen {
+        height: 32px;
+        transition: 0.4s;
+        transition-delay: 0.2s;
+      }
+
+      .confirmContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: $ec1;
+        height: 0;
+        overflow: hidden;
+
+        transition: 0.2s;
+
+        .confirmMessage {
+          margin: 8px 0;
+          font-size: $fs4;
+          color: $ec5;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        .confirmController {
+          display: flex;
+          flex-direction: row;
+
+          button {
+            font-size: $fs4;
+            flex: 1;
+            border: none;
+          }
+
+          .yes {
+            background-color: $ec4;
+            color: white;
+          }
+
+          .no {
+            background-color: $ec2;
+          }
+        }
+      }
+
+      .confirmContainerOpen {
+        height: 66px;
+        transition: 0.4s;
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  .bottomSpace {
+    height: 100px;
+    width: 100%;
+  }
+}
