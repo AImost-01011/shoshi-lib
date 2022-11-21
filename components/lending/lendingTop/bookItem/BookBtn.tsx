@@ -17,24 +17,14 @@ const BookBtn: React.FC<{ book: BookType }> = ({ book }) => {
   });
 
   useEffect(() => {
-    let judgeArr: string[] = [];
-    const lendingUserId = book.lent.userId;
-
-    data?.lending.forEach((el) => judgeArr.push(el.bookId));
-    data?.request.forEach((el) => judgeArr.push(el.bookId));
-    data?.want.forEach((el) => judgeArr.push(el.bookId));
-
-    if (judgeArr.includes(book.bookId)) setStateCode(1);
-    else if (lendingUserId || book.wanted.userId) setStateCode(2);
+    if (
+      book.lent.userId === data?.userId ||
+      book.requested.some((element) => element.userId === data?.userId)
+    )
+      setStateCode(1);
+    else if (book.lent.lentState >= 1) setStateCode(2);
     else setStateCode(3);
-  }, [
-    book.bookId,
-    book.lent.userId,
-    book.wanted.userId,
-    data?.lending,
-    data?.request,
-    data?.want,
-  ]);
+  }, [book.lent.lentState, book.lent.userId, book.requested, data?.userId]);
 
   const requestClick = async () => {
     setStateCode(4);
@@ -49,7 +39,14 @@ const BookBtn: React.FC<{ book: BookType }> = ({ book }) => {
         toast(`「${item.data.bookName}」をリクエストしました。`);
         return refetch();
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+
+        setStateCode(2);
+        toast(`リクエスト中にエラーが発生しました。今のリクエストは無効です。`);
+
+        return refetch();
+      });
   };
 
   const reserveClick = async () => {
@@ -63,14 +60,21 @@ const BookBtn: React.FC<{ book: BookType }> = ({ book }) => {
       .then((item) => {
         if (item.data.isOk) {
           setStateCode(1);
-          toast(`「${item.data.bookName}」をリクエストしました。`);
+          toast(`「${item.data.bookName}」を予約しました。`);
           refetch();
         } else {
           setStateCode(3);
           toast(item.data.message);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+
+        setStateCode(3);
+        toast(`予約中にエラーが発生しました。今の予約は無効です。`);
+
+        return refetch();
+      });
   };
 
   switch (stateCode) {
@@ -122,8 +126,6 @@ const BookBtn: React.FC<{ book: BookType }> = ({ book }) => {
         </button>
       );
   }
-
-  //   return <button className={st.bookBtn}>予約する</button>;
 };
 
 export default BookBtn;

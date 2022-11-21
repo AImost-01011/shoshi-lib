@@ -3,12 +3,10 @@
 .bookItem {
   display: flex;
   flex-direction: column;
-  border: 2px solid $mc4;
   border-radius: 4px;
   overflow: hidden;
   margin: 8px 0;
   background-color: white;
-  box-shadow: 2px 2px 16px -4px $mc5;
 
   .bookInfoContainer {
     display: grid;
@@ -17,6 +15,7 @@
       "pic .. btn  " 40px
       /60px 4px 1fr;
     margin: 4px;
+    padding: 4px;
 
     .bookPic {
       grid-area: pic;
@@ -32,6 +31,7 @@
       line-height: 40px;
       font-size: $fs5;
       color: $mc6;
+      font-weight: bold;
     }
 
     .resBtn {
@@ -97,7 +97,7 @@
       align-items: center;
       border: none;
       padding: 8px;
-      background-color: $mc2;
+      background-color: $mc3;
 
       .openIcon {
         width: 12px;
@@ -112,6 +112,46 @@
         transform: rotate(0deg);
         transition: 0.8s;
         transition-timing-function: $cubic;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc5;
+
+    .bookInfoContainer {
+      .bookPic {
+        background-color: $mc4;
+      }
+
+      .title {
+        color: $mc4;
+      }
+    }
+
+    .bookDetailContainer {
+      div {
+        .detailTitleContainer {
+          .detailTitle {
+            color: $mc1;
+          }
+        }
+
+        .detailDataContainer {
+          .detailData {
+            color: $mc5;
+          }
+        }
+      }
+    }
+
+    .controllContainer {
+      button {
+        background-color: $dmc4;
+
+        .openIcon {
+          filter: invert(70%);
+        }
       }
     }
   }

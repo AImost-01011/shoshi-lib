@@ -1,7 +1,7 @@
 @import "define.module.scss";
 
 .welcomeTop {
-  margin: 8px;
+  padding: 8px;
 
   .logo {
     width: 100%;
@@ -77,6 +77,43 @@
     .tip {
       font-size: $fs2;
       color: $ec3;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .logo {
+      background-color: $dmc5;
+    }
+
+    .introText {
+      color: white;
+      background-color: $dmc4;
+    }
+
+    .inputArea {
+      background-color: $dmc5;
+
+      .inputIndication {
+        color: white;
+      }
+
+      .selectName {
+        background-color: $dmc4;
+        border: 2px solid white;
+        color: white;
+      }
+
+      .desideBtn {
+        background-color: $dmc4;
+        color: $nc4;
+
+        &:disabled {
+          background-color: $dmc6;
+          color: white;
+        }
+      }
     }
   }
 }

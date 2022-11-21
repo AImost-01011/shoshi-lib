@@ -5,24 +5,48 @@
   font-size: $fs4;
   border: none;
   border-radius: 4px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc4;
+  }
 }
 
 .notAvailable {
   background-color: $dc2;
   color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc6;
+    color: $ec1;
+  }
 }
 
 .requested {
   background-color: $nc4;
   color: $nc7;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc6;
+    color: $nc4;
+  }
 }
 
 .request {
   background-color: $mc3;
   color: $mc7;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc4;
+    color: $nc4;
+  }
 }
 
 .preserve {
   background-color: $mc5;
   color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc4;
+    color: $mc4;
+  }
 }

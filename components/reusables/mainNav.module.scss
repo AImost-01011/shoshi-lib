@@ -2,20 +2,39 @@
 
 .mainNav {
   position: fixed;
-  left: 0;
+  left: 50%;
+  bottom: -282px;
+  transform: translateX(-50%);
   width: 100vw;
   z-index: 10;
-  background-color: $mc1;
+  background-color: $mc4;
   overflow: hidden;
+  border-radius: 16px;
 
-  border-radius: 16px 16px 0 0;
+  transition: 0.4s;
+  transition-timing-function: $cubic;
+
+  animation: fluffyAnime 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  @keyframes fluffyAnime {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, 4px);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
 
   .titleTop {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100px;
-    background-color: $mc3;
 
     .upIcon {
       width: 20px;
@@ -34,6 +53,7 @@
 
       .title {
         font-size: $fs7;
+        color: $mc7;
       }
 
       .bagContainer {
@@ -116,9 +136,10 @@
         button {
           width: 40%;
           font-size: $fs4;
-          background-color: white;
-          border: 2px solid $mc3;
+          background-color: $mc1;
+          border: none;
           border-radius: 4px;
+          color: $mc7;
         }
       }
 
@@ -132,10 +153,10 @@
         button {
           width: 40%;
           font-size: $fs4;
-          background-color: white;
-          border: 2px solid $mc3;
+          background-color: $mc1;
+          border: none;
           border-radius: 4px;
-          margin-bottom: 8px;
+          color: $mc7;
         }
       }
 
@@ -145,21 +166,122 @@
         height: 40px;
         font-size: $fs5;
         border: none;
-        color: white;
+        color: $mc4;
         font-weight: bold;
-        background-color: $mc4;
+        background-color: $mc1;
         margin: auto;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc5;
+
+    .titleTop {
+      .upIcon {
+        filter: invert(60%);
+      }
+      .titleContainer {
+        .title {
+          font-size: $fs7;
+          color: $mc4;
+        }
+
+        .bagContainer {
+          .bagIcon {
+            filter: invert(60%);
+          }
+          // .notiIcon {
+
+          //   @keyframes notiAnime {
+          //     from {
+          //       height: 8px;
+          //       width: 8px;
+          //       opacity: 1;
+          //     }
+          //     to {
+          //       height: 32px;
+          //       width: 32px;
+          //       opacity: 0;
+          //     }
+          //   }
+
+          //   .notiInner {
+          //     position: absolute;
+          //     top: 50%;
+          //     left: 50%;
+          //     transform: translate(-50%, -50%);
+          //     border-radius: 100%;
+          //     background-color: $ec2;
+
+          //     animation: notiAnime 1s linear 0s infinite;
+          //   }
+          // }
+        }
+      }
+    }
+
+    .navBody {
+      .listContainer {
+        .listTitle {
+          .title {
+            color: $mc1;
+          }
+
+          .titleLine {
+            background-color: $mc1;
+          }
+        }
+
+        .rentalContainer {
+          button {
+            background-color: $dmc4;
+            color: $mc4;
+          }
+        }
+
+        .myPageContainer {
+          button {
+            background-color: $dmc4;
+            color: $mc4;
+          }
+        }
+
+        .backBtn {
+          color: $mc4;
+          background-color: $dmc4;
+        }
       }
     }
   }
 }
 
 .mainNavOpen {
-  background-color: $mc1;
+  bottom: 10px;
+  width: 96%;
+  backdrop-filter: blur(12px);
+  background-color: rgba($color: $mc4, $alpha: 0.6);
+  box-shadow: 2px 2px 12px -2px $mc5;
+  transition: 0.4s;
+  transition-timing-function: $cubic;
+
   .titleTop {
     .upIcon {
       transform: rotate(60deg);
       transition: 0.4s;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    backdrop-filter: blur(0);
+    background-color: $dmc5;
+    box-shadow: 4px 4px 24px -6px rgba($color: $mc3, $alpha: 0.4);
+
+    .titleTop {
+      .upIcon {
+        transform: rotate(60deg);
+        transition: 0.4s;
+      }
     }
   }
 }

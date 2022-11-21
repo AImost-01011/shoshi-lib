@@ -1,0 +1,13 @@
+.qrReader {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cameraDisplay {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    background-color: silver;
+  }
+}

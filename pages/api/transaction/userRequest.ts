@@ -5,8 +5,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type {
   UserType,
   BookType,
-  UserLending,
-  BookLent,
   UserRequest,
   BookRequested,
   NotificationType,
@@ -30,6 +28,7 @@ export default async function handler(
       const bookData = bookDoc.data() as BookType;
 
       if (userData && bookData) {
+        // priority indexをつける
         let priorityArr: number[] = [];
         bookData.requested.forEach((el) => {
           priorityArr = [...priorityArr, el.priority];
@@ -37,6 +36,8 @@ export default async function handler(
         const nowPriority = priorityArr.length
           ? Math.max(...priorityArr) + 1
           : 1;
+
+        // update内容
 
         const userRequest: UserRequest = {
           bookId: req.body.bookId,
@@ -64,6 +65,8 @@ export default async function handler(
           userName1: userData.userName,
           userName2: "",
         };
+
+        // update---------------------------------------------
 
         trans.update(requestUserRef, {
           request: FieldValue.arrayUnion(userRequest),

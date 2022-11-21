@@ -20,7 +20,6 @@
       background-color: $mc2;
       border-radius: 4px;
       overflow: hidden;
-      box-shadow: 2px 2px 12px -4px $mc6;
 
       .bookInfo {
         margin: 4px;
@@ -72,6 +71,42 @@
     .noItem {
       text-align: center;
       margin: 16px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .caution {
+      color: $ec2;
+    }
+
+    .bookContainer {
+      .bookCard {
+        background-color: $dmc5;
+
+        .bookInfo {
+          .bookPicture {
+            background-color: $mc5;
+          }
+
+          .bookTitle {
+            span {
+              color: $mc4;
+            }
+          }
+
+          .bookDue {
+            span {
+              color: $mc1;
+            }
+          }
+        }
+      }
+
+      .noItem {
+        color: $mc2;
+      }
     }
   }
 }

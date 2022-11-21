@@ -31,13 +31,13 @@ export default async function handler(
           });
 
           if (state.includes("s02")) {
-            if (el.lent.userId) judgement += 1;
+            if (el.lent.lentState >= 1) judgement += 1;
           }
           if (state.includes("s01")) {
             if (el.requested.length) judgement += 1;
           }
           if (state.includes("s00")) {
-            if (!el.lent.userId && !el.requested.length) judgement += 1;
+            if (el.lent.lentState === 0 && !el.requested.length) judgement += 1;
           }
 
           return judgement;

@@ -1,26 +1,8 @@
 @import "define.module.scss";
 
-.loginTop {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .logo {
-    width: 200px;
-    height: 200px;
-    background-color: $mc4;
-    margin: 20px 0;
-  }
-
-  .loading {
-    font-size: $fs4;
-  }
-}
-
 .logoutTop {
-  margin: 8px;
+  padding: 8px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,5 +28,22 @@
     font-size: $fs5;
     color: white;
     margin: 10px auto;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .logo {
+      background-color: $dmc6;
+    }
+
+    .title {
+      color: $mc4;
+    }
+
+    .loginBtn {
+      background-color: $dmc5;
+      color: $mc2;
+    }
   }
 }

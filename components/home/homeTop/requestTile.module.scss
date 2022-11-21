@@ -8,7 +8,6 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: $mc2;
-  box-shadow: 2px 2px 16px -4px $mc5;
 
   .title {
     margin: 4px 8px;
@@ -51,10 +50,40 @@
 
     .listBtn {
       width: 100%;
-      background-color: $mc3;
+      background-color: rgba($color: $mc3, $alpha: 0.5);
       padding: 4px 0;
       border: none;
       font-size: $fs4;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc5;
+
+    .title {
+      color: $mc4;
+    }
+
+    .reqList {
+      width: 100%;
+      .listItem {
+        .itemPicture {
+          background-color: $mc4;
+        }
+
+        .itemTitle {
+          color: $mc4;
+        }
+      }
+
+      .noItem {
+        color: $mc1;
+      }
+
+      .listBtn {
+        color: $mc3;
+        background-color: $dmc6;
+      }
     }
   }
 }

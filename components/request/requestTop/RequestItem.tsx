@@ -31,6 +31,14 @@ const RequestItem: React.FC<{ request: UserRequest }> = ({ request }) => {
           toast(`「${item.data.message}」のリクエストをキャンセルしました。`);
           return refetch();
         } else toast(item.data.message);
+      })
+      .catch((err) => {
+        console.log(err);
+
+        toast(
+          "リクエストのキャンセル中にエラーが発生しました。今のキャンセルは無効です。"
+        );
+        return refetch();
       });
   };
 

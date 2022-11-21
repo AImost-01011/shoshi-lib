@@ -1,0 +1,15 @@
+@import "../../styles/define.module.scss";
+
+.bottomSpace {
+  height: 100px;
+  width: 100px;
+  transition: 0.4s;
+  transition-timing-function: $cubic;
+}
+
+.bottomSpaceOpen {
+  transition: 0.4s;
+  transition-timing-function: $cubic;
+
+  height: 392px;
+}

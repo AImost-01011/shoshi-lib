@@ -32,12 +32,8 @@ export const supporterSlice = createSlice({
   name: "Supporter",
   initialState: initialState,
   reducers: {
-    openNav: (state) => {
-      state.isNavOpen = true;
-    },
-
-    closeNav: (state) => {
-      state.isNavOpen = false;
+    toggleNav: (state) => {
+      state.isNavOpen = !state.isNavOpen;
     },
 
     moveNav: (state) => {
@@ -71,6 +67,6 @@ export const supporterSlice = createSlice({
   },
 });
 
-export const { openNav, closeNav, moveNav, stopNav, setUserId, setLineId } =
+export const { toggleNav, moveNav, stopNav, setUserId, setLineId } =
   supporterSlice.actions;
 export const supporterReducer = supporterSlice.reducer;

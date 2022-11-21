@@ -5,4 +5,8 @@
   width: 100%;
   background-color: $mc6;
   margin-bottom: 8px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $mc2;
+  }
 }

@@ -23,11 +23,16 @@ const LendingTop: React.FC = () => {
 
       <section className={st.bookListContainer}>
         {supporter.search.isLoading ? (
-          <div>読み込み中</div>
+          <>
+            <div className={st.loading}>読み込み中</div>
+            {supporter.search.books.map((el, i) => (
+              <BookItem book={el} key={i} />
+            ))}
+          </>
         ) : supporter.search.books.length ? (
           supporter.search.books.map((el, i) => <BookItem book={el} key={i} />)
         ) : (
-          <div>本が見つからないよ</div>
+          <div className={st.notFound}>本が見つからないよ</div>
         )}
       </section>
 

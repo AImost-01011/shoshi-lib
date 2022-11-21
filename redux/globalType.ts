@@ -81,7 +81,6 @@ export interface BookType {
     imagePath: string;
     launch: string;
   };
-  wanted: BookWanted;
 }
 
 export interface BookLent {
@@ -89,6 +88,7 @@ export interface BookLent {
   dueDate: string;
   userId: string;
   userName: string;
+  lentState: number;
 }
 
 export interface BookRequested {
@@ -108,11 +108,11 @@ export interface BookTag {
   tagMag: number;
 }
 
-export interface BookWanted {
-  userId: string;
-  userName: string;
-  wantedDate: string;
-}
+// export interface BookWanted {
+//   userId: string;
+//   userName: string;
+//   wantedDate: string;
+// }
 
 //notification interface
 

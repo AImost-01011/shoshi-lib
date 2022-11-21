@@ -3,11 +3,25 @@
 .lendingTop {
   padding: 8px;
   background-color: $mc1;
-  height: auto;
+  min-height: 100vh;
 
   .bookListContainer {
     display: flex;
     flex-direction: column;
     margin: 8px 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .bookListContainer {
+      .loading {
+        color: $nc4;
+      }
+
+      .notFound {
+        color: $ec4;
+      }
+    }
   }
 }

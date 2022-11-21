@@ -5,7 +5,6 @@
   border-radius: 4px;
   overflow: hidden;
   margin: 8px 0;
-  box-shadow: $shadow;
 
   .bookInfo {
     display: flex;
@@ -99,5 +98,53 @@
 
     transition: 0.4s;
     transition-delay: 0.2s;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc5;
+
+    .bookInfo {
+      .bookPicture {
+        background-color: $mc4;
+      }
+
+      .bookTitle {
+        color: $mc4;
+      }
+    }
+
+    .requestController {
+      button {
+        background-color: $dmc4;
+        color: $ec4;
+      }
+    }
+
+    .deleteController {
+      background-color: $dmc6;
+
+      .deleteMessage {
+        color: $ec4;
+      }
+
+      .confirmController {
+        .yes {
+          background-color: $dmc4;
+          color: $ec4;
+        }
+
+        .no {
+          background-color: $dmc5;
+          color: $ec1;
+        }
+      }
+    }
+
+    .deleteControllerOpen {
+      height: 66px;
+
+      transition: 0.4s;
+      transition-delay: 0.2s;
+    }
   }
 }

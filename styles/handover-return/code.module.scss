@@ -44,15 +44,7 @@
           border-radius: 4px;
           font-size: $fs3;
           text-align: center;
-        }
-
-        .typeInput {
           width: 200px;
-        }
-
-        .dash {
-          font-weight: bold;
-          margin: 0 4px;
         }
       }
     }
@@ -66,10 +58,8 @@
       button {
         font-size: $fs4;
         border: none;
-        background-color: $mc2;
         padding: 8px;
         border-radius: 8px;
-        box-shadow: 2px 2px 16px -4px $mc5;
       }
 
       .goBtn {
@@ -104,9 +94,6 @@
     .resultContainer {
       .resultCard {
         margin: 8px;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
         border: none;
         color: white;
         border-radius: 4px;
@@ -143,10 +130,10 @@
         }
       }
       .bookCard {
-        background-color: $mc3;
+        background-color: $mc4;
       }
       .rejectCard {
-        background-color: $ec3;
+        background-color: $ec4;
 
         .rejectMessage {
           height: 80px;
@@ -182,13 +169,11 @@
         .confirm {
           background-color: $ec4;
           color: white;
-          box-shadow: 2px 2px 16px -4px $ec5;
         }
 
         .reject {
           background-color: $ec1;
           color: $ec7;
-          box-shadow: 2px 2px 16px -4px $ec2;
         }
       }
 
@@ -196,13 +181,11 @@
         .confirm {
           background-color: $mc4;
           color: white;
-          box-shadow: 2px 2px 16px -4px $mc5;
         }
 
         .reject {
-          background-color: $mc2;
+          background-color: $mc3;
           color: $ec7;
-          box-shadow: 2px 2px 16px -4px $mc5;
         }
       }
     }
@@ -279,7 +262,6 @@
         border-radius: 8px;
         padding: 4px;
         color: $nc7;
-        box-shadow: 2px 2px 16px -4px $nc5;
       }
     }
   }
@@ -289,5 +271,133 @@
 
     transition: 0.8s;
     transition-timing-function: $cubic;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .one {
+      .title {
+        color: $mc4;
+      }
+
+      .inputCard {
+        background-color: $dmc5;
+        border: none;
+
+        .inputTitle {
+          color: $mc4;
+        }
+
+        .inputContainer {
+          .typeInput {
+            background-color: $dmc4;
+            border: none;
+            transition: 0.2s;
+            color: $mc4;
+
+            &:focus {
+              background-color: $dmc3;
+              outline: none;
+              transition: 0.4s;
+            }
+          }
+        }
+      }
+
+      .btnContainer {
+        .goBtn {
+          background-color: $dmc4;
+          color: $mc4;
+        }
+
+        .backBtn {
+          background-color: $dmc6;
+          color: $mc1;
+        }
+      }
+    }
+
+    .two {
+      .title {
+        color: $mc4;
+      }
+
+      .resultContainer {
+        .resultCard {
+          .result {
+            background-color: $dmc5;
+
+            .resultImg {
+              background-color: $mc4;
+            }
+
+            .resultTitle {
+              color: $mc4;
+            }
+
+            .resultOwner {
+              color: $mc1;
+            }
+          }
+        }
+
+        .rejectCard {
+          background-color: $dmc5;
+
+          .rejectMessage {
+            color: $ec4;
+          }
+        }
+
+        .question {
+          color: $mc1;
+        }
+
+        .rejectBtnContainer {
+          .confirm {
+            background-color: $dmc4;
+            color: $ec4;
+          }
+
+          .reject {
+            background-color: $dmc6;
+            color: $ec1;
+          }
+        }
+
+        .btnContainer {
+          .confirm {
+            background-color: $dmc4;
+            color: $mc4;
+          }
+
+          .reject {
+            background-color: $dmc6;
+            color: $mc1;
+          }
+        }
+      }
+    }
+
+    .three {
+      .title {
+        color: $mc4;
+      }
+
+      .succeedContainer {
+        .succeedCard {
+          background-color: $dmc5;
+          color: $nc4;
+        }
+      }
+
+      .btnContainer {
+        button {
+          background-color: $dmc4;
+          color: $nc4;
+        }
+      }
+    }
   }
 }

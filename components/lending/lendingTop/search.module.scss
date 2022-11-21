@@ -1,18 +1,15 @@
 @import "../../../styles/define.module.scss";
 
 .search {
-  border-radius: 4px;
-  border: 2px solid $mc3;
+  border-radius: 8px;
   overflow: hidden;
-  background-color: white;
-  box-shadow: 2px 2px 16px -4px $mc5;
+  background-color: $mc2;
 
   .titleContainer {
     color: $mc7;
     font-weight: bold;
     font-size: $fs6;
     margin: 4px;
-    color: $mc7;
   }
 
   .bodyContainer {
@@ -63,6 +60,7 @@
           .cateCheck:checked + .cateItem {
             color: $mc4;
             border-color: $mc4;
+            background-color: $mc1;
             border-radius: 8px;
 
             transition: 0.4s;
@@ -72,6 +70,7 @@
             border: 1px solid $dc2;
             padding: 0 8px;
             color: $dc1;
+            background-color: white;
 
             transition: 0.2s;
           }
@@ -104,7 +103,7 @@
 
   .btnContainer {
     button {
-      background-color: $mc2;
+      background-color: rgba($color: $mc3, $alpha: 0.5);
       width: 100%;
       color: $mc7;
       border: none;
@@ -128,5 +127,64 @@
     height: 400px;
     transition: 0.6s;
     transition-timing-function: $cubic;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc5;
+
+    .titleContainer {
+      color: $mc4;
+    }
+
+    .bodyContainer {
+      .cateContainer {
+        .cateTitleContainer {
+          .title {
+            color: $mc4;
+          }
+
+          .divider {
+            background-color: $dmc4;
+          }
+        }
+
+        .cateItemList {
+          .cateItemContainer {
+            margin: 4px;
+
+            .cateCheck:checked + .cateItem {
+              color: $mc4;
+              border-color: $mc4;
+              background-color: $dmc4;
+            }
+
+            .cateItem {
+              border: 1px solid $mc1;
+              color: $mc1;
+              background-color: $dmc5;
+            }
+          }
+        }
+      }
+
+      .checkBtnContainer {
+        .checkBtn {
+          background-color: $dmc4;
+          color: $mc4;
+        }
+
+        .checkOutBtn {
+          background-color: $dmc6;
+          color: $mc1;
+        }
+      }
+    }
+
+    .btnContainer {
+      button {
+        background-color: $dmc4;
+        color: $mc4;
+      }
+    }
   }
 }

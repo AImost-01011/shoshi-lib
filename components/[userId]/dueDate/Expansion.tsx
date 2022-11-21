@@ -63,7 +63,7 @@ const Expansion: React.FC<{
   } else if (expansionCode === 3) {
     return (
       <button className={st.expired} disabled={true}>
-        貸与期間を過ぎています
+        貸出期限を過ぎています
       </button>
     );
   } else if (expansionCode === 2) {

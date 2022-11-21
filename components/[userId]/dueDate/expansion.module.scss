@@ -6,6 +6,11 @@
   border: none;
   font-size: $fs4;
   padding: 4px 8px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc4;
+    color: $mc4;
+  }
 }
 
 .noExpansion {
@@ -15,6 +20,11 @@
   border: none;
   font-size: $fs4;
   padding: 4px 8px;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc6;
+    color: rgba($color: $mc1, $alpha: 0.6);
+  }
 }
 
 .still {
@@ -24,6 +34,11 @@
   padding: 4px 8px;
   background-color: $dc2;
   color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc6;
+    color: rgba($color: $mc1, $alpha: 0.6);
+  }
 }
 
 .expired {
@@ -33,6 +48,11 @@
   padding: 4px 8px;
   background-color: $ec4;
   color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc6;
+    color: $ec4;
+  }
 }
 
 .loading {
@@ -43,4 +63,9 @@
   background-color: $nc4;
   color: $nc7;
   transition: 0.4s;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc6;
+    color: $nc4;
+  }
 }

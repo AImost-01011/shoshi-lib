@@ -11,8 +11,7 @@ import Divider from "../../reusables/Divider";
 import { RootState } from "../../../redux/store";
 import { useGetUserByUserIdQuery } from "../../../redux/query/userQuery";
 import Expansion from "./Expansion";
-import { BookType, UserLending, UserType } from "../../../redux/globalType";
-import axios, { AxiosResponse } from "axios";
+import { UserLending } from "../../../redux/globalType";
 import BottomSpace from "../../reusables/BottomSpace";
 
 const DueMain = () => {
@@ -44,7 +43,7 @@ const DueMain = () => {
 
       {data?.lending.length === 3 ? (
         <span className={st.caution}>
-          ！現在3冊借りているためリクエストした本を受け取ることができません。！
+          ！現在3冊借りているためリクエストした本を借りることができません。！
         </span>
       ) : (
         <div />

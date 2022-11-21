@@ -1,0 +1,52 @@
+@import "../../styles/define.module.scss";
+
+.notLoggedIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  .container {
+    height: 300px;
+    width: 90%;
+    background-color: $ec4;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .title {
+      font-size: $fs5;
+      color: $ec1;
+    }
+
+    .loginBtn {
+      padding: 8px;
+      font-size: $fs4;
+      background-color: $ec1;
+      border: none;
+      border-radius: 8px;
+      color: $ec7;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .container {
+      background-color: $dmc5;
+
+      .title {
+        color: $ec4;
+      }
+
+      .loginBtn {
+        background-color: $dmc4;
+        color: $ec4;
+      }
+    }
+  }
+}

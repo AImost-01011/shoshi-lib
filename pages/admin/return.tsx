@@ -5,9 +5,10 @@ import st from "../../styles/admin/return.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useUser } from "@auth0/nextjs-auth0";
 import { BookType } from "../../redux/globalType";
+import { toast } from "react-toastify";
 import PageTitle from "../../components/reusables/PageTitle";
-import QrScanner from "../../components/reusables/QrScanner";
 import axios, { AxiosResponse } from "axios";
+import QrReader from "../../components/reusables/QrReader";
 
 const Return = () => {
   const [phase, setPhase] = useState(0);
@@ -22,6 +23,7 @@ const Return = () => {
       dueDate: "",
       userId: "",
       userName: "",
+      lentState: 0,
     },
     requested: [],
     property: {
@@ -30,7 +32,6 @@ const Return = () => {
       tag: [],
       launch: "",
     },
-    wanted: { userId: "", userName: "", wantedDate: "" },
   });
 
   const onScan = async (data: string | null) => {
@@ -62,6 +63,7 @@ const Return = () => {
         dueDate: "",
         userId: "",
         userName: "",
+        lentState: 0,
       },
       requested: [],
       property: {
@@ -70,7 +72,6 @@ const Return = () => {
         tag: [],
         launch: "",
       },
-      wanted: { userId: "", userName: "", wantedDate: "" },
     });
     setPhase(0);
   };
@@ -84,7 +85,10 @@ const Return = () => {
       .then(() => {
         setPhase(2);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        toast("エラーが発生しました。");
+        console.log(err);
+      });
   };
 
   return (
@@ -101,7 +105,7 @@ const Return = () => {
         <div className={phase === 0 ? `${st.one} ${st.oneOpen}` : st.one}>
           <div className={st.title}>①</div>
 
-          <QrScanner isActive={phase === 0} onScan={onScan} />
+          <QrReader onScan={onScan} />
 
           <div className={st.btnContainer}>
             <Link href="/admin/home" passHref={true}>

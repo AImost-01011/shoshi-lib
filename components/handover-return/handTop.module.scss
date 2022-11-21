@@ -18,7 +18,18 @@
       padding: 4px;
       font-size: $fs4;
       border-radius: 8px;
-      box-shadow: 2px 2px 16px -4px $mc5;
+      color: $mc7;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .selectContainer {
+      button {
+        background-color: $dmc5;
+        color: $mc4;
+      }
     }
   }
 }

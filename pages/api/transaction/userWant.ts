@@ -5,13 +5,9 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type {
   UserType,
   BookType,
-  UserLending,
-  BookLent,
-  UserRequest,
-  BookRequested,
   UserWant,
-  BookWanted,
   NotificationType,
+  BookLent,
 } from "../../../redux/globalType";
 import { FieldValue } from "firebase-admin/firestore";
 import { dateString } from "../../../utils/dateString";
@@ -43,10 +39,12 @@ export default async function handler(
           wantDate: dateString(new Date()),
         };
 
-        const bookWanted: BookWanted = {
+        const bookWanted: BookLent = {
           userId: req.body.userId,
           userName: userData.userName,
-          wantedDate: dateString(new Date()),
+          dueDate: "",
+          lentDate: "",
+          lentState: 1,
         };
 
         const newNoti: NotificationType = {
@@ -68,7 +66,7 @@ export default async function handler(
         });
 
         trans.update(wantBookRef, {
-          wanted: bookWanted,
+          lent: bookWanted,
         });
 
         trans.update(notiRef, {

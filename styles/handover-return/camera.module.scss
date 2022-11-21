@@ -41,7 +41,7 @@
         background-color: $mc2;
         padding: 8px;
         border-radius: 8px;
-        box-shadow: 2px 2px 16px -4px $mc5;
+        color: $mc7;
       }
     }
   }
@@ -143,13 +143,11 @@
         .confirm {
           background-color: $ec4;
           color: white;
-          box-shadow: 2px 2px 16px -4px $ec5;
         }
 
         .reject {
           background-color: $ec1;
           color: $ec7;
-          box-shadow: 2px 2px 16px -4px $ec2;
         }
       }
 
@@ -157,13 +155,11 @@
         .confirm {
           background-color: $mc4;
           color: white;
-          box-shadow: 2px 2px 16px -4px $mc5;
         }
 
         .reject {
           background-color: $mc2;
           color: $ec7;
-          box-shadow: 2px 2px 16px -4px $mc5;
         }
       }
     }
@@ -240,7 +236,6 @@
         border-radius: 8px;
         padding: 4px;
         color: $nc7;
-        box-shadow: 2px 2px 16px -4px $nc5;
       }
     }
   }
@@ -250,5 +245,111 @@
 
     transition: 0.8s;
     transition-timing-function: $cubic;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dmc7;
+
+    .one {
+      .title {
+        color: $mc4;
+      }
+
+      .cameraDesc {
+        color: $mc2;
+      }
+
+      .returnBtnContainer {
+        button {
+          background-color: $dmc4;
+          color: $mc4;
+        }
+      }
+    }
+
+    .two {
+      .title {
+        color: $mc4;
+      }
+
+      .resultContainer {
+        .resultCard {
+          .result {
+            .resultImg {
+              background-color: $mc4;
+            }
+
+            .resultTitle {
+              color: $mc4;
+            }
+
+            .resultOwner {
+              color: $mc1;
+            }
+          }
+        }
+        .bookCard {
+          background-color: $dmc5;
+        }
+        .rejectCard {
+          background-color: $dmc5;
+
+          .rejectMessage {
+            color: $ec4;
+          }
+        }
+
+        .question {
+          color: $mc1;
+        }
+
+        .rejectBtnContainer {
+          .confirm {
+            background-color: $dmc4;
+            color: $ec3;
+          }
+
+          .reject {
+            background-color: $dmc6;
+            color: $ec1;
+          }
+        }
+
+        .btnContainer {
+          .confirm {
+            background-color: $dmc4;
+            color: $mc4;
+          }
+
+          .reject {
+            background-color: $dmc6;
+            color: $mc1;
+          }
+        }
+      }
+    }
+
+    .three {
+      .title {
+        color: $mc4;
+      }
+
+      .succeedContainer {
+        .succeedCard {
+          background-color: $dmc5;
+
+          div {
+            color: $nc4;
+          }
+        }
+      }
+
+      .btnContainer {
+        button {
+          background-color: $dmc4;
+          color: $nc4;
+        }
+      }
+    }
   }
 }

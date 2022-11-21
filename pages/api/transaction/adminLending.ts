@@ -8,7 +8,6 @@ import type {
   UserLending,
   BookLent,
   NotificationType,
-  BookWanted,
 } from "../../../redux/globalType";
 import { FieldValue } from "firebase-admin/firestore";
 import { dateString } from "../../../utils/dateString";
@@ -48,6 +47,7 @@ export default async function handler(
         userId: req.body.userId,
         userName: userData.userName,
         lentDate: now,
+        lentState: 2,
       };
 
       const newNoti: NotificationType[] = [
@@ -92,51 +92,34 @@ export default async function handler(
         },
       ];
 
-      if (targetUserWant) {
-        const bookWanted: BookWanted = {
-          userId: "",
-          userName: "",
-          wantedDate: "",
-        };
+      // update--------------------------------------------------
 
+      trans.update(notiRef, {
+        notiList: FieldValue.arrayUnion(...newNoti),
+      });
+
+      trans.update(lendingBookRef, {
+        lent: newLendingUser,
+      });
+
+      if (targetUserWant) {
+        // wantがある場合消去する
         trans.update(lendingUserRef, {
           lending: FieldValue.arrayUnion(newLendingBook),
           want: FieldValue.arrayRemove(targetUserWant),
         });
-
-        trans.update(lendingBookRef, {
-          lent: newLendingUser,
-          wanted: bookWanted,
-        });
-
-        trans.update(notiRef, {
-          notiList: FieldValue.arrayUnion(...newNoti),
-        });
-
-        return res.status(200).send({
-          bookName: bookData.bookName,
-          userName: userData.userName,
-          due: req.body.dueDate,
-        });
       } else {
+        // wantがない場合そのまま貸出する
         trans.update(lendingUserRef, {
           lending: FieldValue.arrayUnion(newLendingBook),
         });
-
-        trans.update(lendingBookRef, {
-          lent: newLendingUser,
-        });
-
-        trans.update(notiRef, {
-          notiList: FieldValue.arrayUnion(...newNoti),
-        });
-
-        return res.status(200).send({
-          bookName: bookData.bookName,
-          userName: userData.userName,
-          due: req.body.dueDate,
-        });
       }
+
+      return res.status(200).send({
+        bookName: bookData.bookName,
+        userName: userData.userName,
+        due: req.body.dueDate,
+      });
     });
   } catch (err) {
     console.log(err);
