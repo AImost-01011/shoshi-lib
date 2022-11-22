@@ -12,11 +12,6 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(process.env.AUTH0_BASE_URL);
-    console.log(process.env.AUTH0_CLIENT_SECRET);
-    console.log(process.env.AUTH0_CLIENT_ID);
-    console.log(process.env.AUTH0_ISSUER_BASE_URL);
-    console.log(process.env.AUTH0_SECRET);
     // if (error) {
     //   router.push("/error");
     // }
@@ -54,7 +49,6 @@ const Home: NextPage = () => {
         <Link href="/api/auth/login" passHref={true}>
           <button className={st.loginBtn}>ログイン</button>
         </Link>
-        {process.env.AUTH0_BASE_URL}
       </main>
     </>
   );
